@@ -22,12 +22,19 @@ git clone https://github.com/uoip/g2opy.git
 cd g2opy
 mkdir build
 cd build
-cmake ..
+cmake -DPYBIND11_PYTHON_VERSION=${your python version} ..
 make -j8
 cd ..
-python setup.py install
+python3 setup.py install # This will not be run for conda users
 ```
-Tested under Ubuntu 16.04, Python 3.6+.
+Tested under Ubuntu 20.04, Python 3.9+.
+
+### Conda
+Copy *.so file to conda envs
+```
+cp g2o.cpython-39-x86_64-linux-gnu.so ~/anaconda3/envs/E2VID/lib/python3.9/site-packages/
+```
+
 
 
 ## Get Started
